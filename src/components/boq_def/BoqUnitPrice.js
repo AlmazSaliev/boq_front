@@ -7,6 +7,7 @@ import { MainSnackBar } from "../ui/MainSnackBar";
 
 function BoqUnitPrice({ date = "25.07.2025" }) {
   const onclick = async () => {
+    MainSnackBar.info("Начато действие для скачивание!");
     axiosInstance
       .get("download/unit_price/download_xlsx", {
         responseType: "blob",
@@ -17,19 +18,16 @@ function BoqUnitPrice({ date = "25.07.2025" }) {
             type: "application/vnd.ms-excel.sheet.binary.macroEnabled.12",
           })
         );
-        // Создаем временную ссылку и эмулируем клик
         const link = document.createElement("a");
         link.href = url;
         let date = new Date();
         let fileName = "BOQ_Unit_Price_" + date.toLocaleDateString() + ".xlsx";
-        link.setAttribute("download", fileName); // Указываем имя файла
+        link.setAttribute("download", fileName);
         document.body.appendChild(link);
         link.click();
-
-        // Удаляем ссылку после скачивания
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
-        // http://localhost:3000/download/civil/download_xlsb/Civil_IWP_Status_20250725_130847.xlsb
+        MainSnackBar.success("Данные успешно скачены!");
       })
       .catch((e) => {
         console.log(e);

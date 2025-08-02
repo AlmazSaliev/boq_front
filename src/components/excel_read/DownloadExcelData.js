@@ -25,6 +25,7 @@ const DownloadExcelData = ({ onClose, pageTitle }) => {
     JSON.parse(localStorage.getItem("params_for_filter_civil_material")) || {};
 
   const downloadCivil = (array) => {
+    MainSnackBar.info("Начато действие для скачивание!");
     axiosInstance
       .post("download/civil/download_xlsx", array, {
         responseType: "blob",
@@ -46,6 +47,7 @@ const DownloadExcelData = ({ onClose, pageTitle }) => {
 
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
+        MainSnackBar.success("Данные успешно скачены!");
       })
       .catch((e) => {
         console.log(e);

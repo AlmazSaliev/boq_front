@@ -6,6 +6,7 @@ import { MainSnackBar } from "../ui/MainSnackBar";
 
 function BoqProgress() {
   const onClickInlineProgress = async () => {
+    MainSnackBar.info("Начато действие для скачивание!");
     axiosInstance
       .get("download/boq_code_progress_inline/download_xlsx", {
         responseType: "blob",
@@ -26,6 +27,7 @@ function BoqProgress() {
 
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
+        MainSnackBar.success("Данные успешно скачены!");
       })
       .catch((e) => {
         console.log(e);

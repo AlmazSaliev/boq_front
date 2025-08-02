@@ -7,6 +7,7 @@ import { MainSnackBar } from "../ui/MainSnackBar";
 
 function BoqCatalog({ date = "25.07.2025" }) {
   const onclick = async () => {
+    MainSnackBar.info("Начато действие для скачивание!");
     axiosInstance
       .get("download/catalog/download_xlsx", {
         responseType: "blob",
@@ -27,6 +28,7 @@ function BoqCatalog({ date = "25.07.2025" }) {
 
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
+        MainSnackBar.success("Данные успешно скачены!");
       })
       .catch((e) => {
         MainSnackBar.error("Что-то пошло не так, попробуйте позже!");
