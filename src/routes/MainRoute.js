@@ -67,6 +67,7 @@ function MainRoute() {
         </Route>
         <Route path="/boq" element={<BoqDefPage />} />
       </Route>
+      <Route path="*" element={<Navigate to={"/"} />} />
     </Routes>
   );
 }
