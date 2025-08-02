@@ -1,17 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BoqCatalog from "../components/boq_def/BoqCatalog";
 import BoqUnitPrice from "../components/boq_def/BoqUnitPrice";
 import BoqProgress from "../components/boq_def/BoqProgress";
 import styled from "@emotion/styled";
+import { axiosInstance } from "../config/axios";
+import { MainSnackBar } from "../components/ui/MainSnackBar";
 // import RawpBox from "../components/boq_def/RawpBox";
 
 function BoqDefPage() {
+  const [date, setDate] = useState([]);
+  const onclick = async () => {
+    axiosInstance
+      .get("unit_price/refresh_date")
+      .then((res) => {
+        setDate(res.data);
+      })
+      .catch((e) => {
+        MainSnackBar.error("Что-то пошло не так, при получении дат изменений!");
+      });
+  };
+  let catalog_date = "";
+  let unit_date = "";
+  if (date.length > 0) {
+    for (let i = 0; i < date.length; i++) {
+      const el = date[i];
+      if (el?.type === "unit_price") {
+        unit_date = el?.dateRefresh;
+      } else if (el?.type === "catalog") {
+        catalog_date = el?.dateRefresh;
+      }
+    }
+  }
+  useEffect(() => {
+    onclick();
+  }, []);
   return (
     <WrapperAll>
       <h3>BOQ Catalog / BOQ Unit Price / BOQ Progress</h3>
       <div className="components_boq_box">
-        <BoqCatalog />
-        <BoqUnitPrice />
+        <BoqCatalog date={catalog_date} />
+        <BoqUnitPrice date={unit_date} />
         <BoqProgress />
         {/* <RawpBox /> */}
       </div>
