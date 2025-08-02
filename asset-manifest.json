@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/boq_front/static/css/main.01eeafce.css",
-    "main.js": "/boq_front/static/js/main.72cea55c.js",
+    "main.js": "/boq_front/static/js/main.b20857e1.js",
     "static/js/453.3fce1013.chunk.js": "/boq_front/static/js/453.3fce1013.chunk.js",
-    "static/media/coming_soon.png": "/boq_front/static/media/coming_soon.471a0a7650e92ed07c07.png",
     "index.html": "/boq_front/index.html",
     "main.01eeafce.css.map": "/boq_front/static/css/main.01eeafce.css.map",
-    "main.72cea55c.js.map": "/boq_front/static/js/main.72cea55c.js.map",
+    "main.b20857e1.js.map": "/boq_front/static/js/main.b20857e1.js.map",
     "453.3fce1013.chunk.js.map": "/boq_front/static/js/453.3fce1013.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.01eeafce.css",
-    "static/js/main.72cea55c.js"
+    "static/js/main.b20857e1.js"
   ]
 }
