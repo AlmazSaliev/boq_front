@@ -13,12 +13,15 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const getEmailValue = (e) =>
+  const getEmailValue = (e) => {
     setValue((p) => ({ ...p, email: e.target.value }));
-  const getPassword = (e) =>
+  };
+  const getPassword = (e) => {
     setValue((p) => ({ ...p, password: e.target.value }));
+  };
 
-  const clickLog = () => {
+  const clickLog = (e) => {
+    // e?.preventDefault();
     if (value.email && value.password && value.email.endsWith("@rencons.com")) {
       axiosInstance
         .post("auth/login", value)
@@ -45,7 +48,13 @@ const Login = () => {
   };
 
   return (
-    <WrapperAll>
+    <WrapperAll
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          clickLog();
+        }
+      }}
+    >
       <h2>Login</h2>
       <div className="login_input_box">
         <MainInput
@@ -54,6 +63,9 @@ const Login = () => {
           onChange={getEmailValue}
           value={value.email}
           required={true}
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
         />
         <PasswordInput
           required={true}

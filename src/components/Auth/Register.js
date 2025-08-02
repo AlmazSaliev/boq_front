@@ -7,8 +7,12 @@ import { MainSnackBar } from "../ui/MainSnackBar";
 
 const Register = ({ clickReg }) => {
   const [email, setEmail] = useState("");
-  const getEmail = (e) => setEmail(e.target.value);
-  const clickRegister = () => {
+  const getEmail = (e) => {
+    e.preventDefault();
+    setEmail(e.target.value);
+  };
+  const clickRegister = (e) => {
+    e.preventDefault();
     localStorage.removeItem("accessToken");
     if (email && email.endsWith("@rencons.com")) {
       axiosInstance
@@ -38,6 +42,7 @@ const Register = ({ clickReg }) => {
           variant="outlined"
           required={true}
           onChange={getEmail}
+          onSubmit={clickRegister}
           value={email}
         />
       </div>

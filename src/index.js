@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { closeSnackbar, SnackbarProvider } from "notistack";
 import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -24,9 +24,9 @@ root.render(
       </IconButton>
     )}
   >
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </SnackbarProvider>
 );
 reportWebVitals();

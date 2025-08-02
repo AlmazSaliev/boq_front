@@ -35,6 +35,11 @@ const PasswordInput = ({
         onChange={onChange}
         value={value}
         autoComplete="off"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+          }
+        }}
         endAdornment={
           <InputAdornment position="end">
             <IconButton

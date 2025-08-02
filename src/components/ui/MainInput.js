@@ -3,11 +3,11 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
 export default function MainInput(
-  { label, required = false, variant = "standard", onChange = () => {}, value },
+  { label, required = false, variant = "standard", onSubmit=()=>{}, onChange = () => {}, value },
   props
 ) {
   return (
-    <Box component="form" sx={{ width: "100%" }} noValidate autoComplete="off">
+    <Box component="form" sx={{ width: "100%" }} onSubmit={onSubmit} noValidate autoComplete="off">
       <TextField
         id="standard-basic"
         sx={{ width: "100%" }}

@@ -1,5 +1,4 @@
 import React from "react";
-import ComingSoon from "../../assets/images/coming_soon.png";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +9,7 @@ function OnProcess() {
   return (
     <WrapperAll>
       <div>
-        <img src={ComingSoon} alt="coming_soon" />
+        <img src="https://png.pngtree.com/png-clipart/20211116/original/pngtree-yellow-coming-soon-png-image_6939698.png" alt="coming_soon" />
         <div className="box_finish">
           <p>Now, you can work with </p>
           <p className="p_civil" onClick={nav_to_civil}>

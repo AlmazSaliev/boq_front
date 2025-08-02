@@ -13,12 +13,18 @@ function ChangePassword({ handleButtonClick, open }) {
     oldPassword: "",
     newPassword: "",
   });
-  const getEmailValue = (e) =>
+  const getEmailValue = (e) => {
+    e?.preventDefault();
     setValue((p) => ({ ...p, email: e.target.value }));
-  const getOldPassword = (e) =>
+  };
+  const getOldPassword = (e) => {
+    e?.preventDefault();
     setValue((p) => ({ ...p, oldPassword: e.target.value }));
-  const getNewPassword = (e) =>
+  };
+  const getNewPassword = (e) => {
+    e?.preventDefault();
     setValue((p) => ({ ...p, newPassword: e.target.value }));
+  };
 
   const sendChangePassword = async () => {
     if (!value.email) {
@@ -67,7 +73,11 @@ function ChangePassword({ handleButtonClick, open }) {
             value={value.newPassword}
           />
         </div>
-        <Button onClick={sendChangePassword} variant="contained" sx={{textTransform: "none"}}>
+        <Button
+          onClick={sendChangePassword}
+          variant="contained"
+          sx={{ textTransform: "none" }}
+        >
           Change password
         </Button>
       </WrapperAll>
