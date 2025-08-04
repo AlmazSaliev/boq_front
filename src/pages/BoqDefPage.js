@@ -5,6 +5,7 @@ import BoqProgress from "../components/boq_def/BoqProgress";
 import styled from "@emotion/styled";
 import { axiosInstance } from "../config/axios";
 import { MainSnackBar } from "../components/ui/MainSnackBar";
+import UniqTagExample from "../components/boq_def/UniqTagExample";
 // import RawpBox from "../components/boq_def/RawpBox";
 
 function BoqDefPage() {
@@ -16,7 +17,7 @@ function BoqDefPage() {
         setDate(res.data);
       })
       .catch((e) => {
-        MainSnackBar.error("Что-то пошло не так, при получении дат изменений!");
+        // MainSnackBar.error("Что-то пошло не так, при получении дат изменений!");
       });
   };
   let catalog_date = "";
@@ -37,11 +38,13 @@ function BoqDefPage() {
   return (
     <WrapperAll>
       <h3>BOQ Catalog / BOQ Unit Price / BOQ Progress</h3>
-      <div className="components_boq_box">
-        <BoqCatalog date={catalog_date} />
-        <BoqUnitPrice date={unit_date} />
-        <BoqProgress />
-        {/* <RawpBox /> */}
+      <div className="all_components_boq_box">
+        <div className="components_boq_box">
+          <BoqCatalog date={catalog_date} />
+          <BoqUnitPrice date={unit_date} />
+          <BoqProgress />
+          {/* <RawpBox /> */}
+        </div>
       </div>
     </WrapperAll>
   );
@@ -55,6 +58,11 @@ const WrapperAll = styled("div")`
   margin: 0 auto;
   margin-top: 70px;
   gap: 40px;
+  .all_components_boq_box {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+  }
   .components_boq_box {
     display: flex;
     flex-direction: column;

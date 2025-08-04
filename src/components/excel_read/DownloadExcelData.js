@@ -71,16 +71,16 @@ const DownloadExcelData = ({ onClose, pageTitle }) => {
   let arrfilterCivil = [];
   for (let i = 0; i < filterCivil?.filter.length; i++) {
     const element = filterCivil?.filter[i];
-    for (let k = 0; k < element?.list?.length; k++) {
-      const item = element?.list[k];
+    for (let k = 0; k < element?.listColumn?.length; k++) {
+      const item = element?.listColumn[k];
       arrfilterCivil.push(item);
     }
   }
   let arrfilterMaterial = [];
   for (let i = 0; i < filterMaterial?.filter.length; i++) {
     const element = filterMaterial?.filter[i];
-    for (let k = 0; k < element?.list?.length; k++) {
-      const item = element?.list[k];
+    for (let k = 0; k < element?.listColumn?.length; k++) {
+      const item = element?.listColumn[k];
       arrfilterMaterial.push(item);
     }
   }

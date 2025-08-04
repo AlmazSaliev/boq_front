@@ -432,3 +432,118 @@ export const Civil_Material_Table_Title = [
     valueGetter: (p) => p.data.access_id,
   },
 ];
+
+export const Civil_Works_Unique_Tag = [
+  {
+    title: "Unique Tag + BOQ Code",
+    value: "uniq_tag_boq_code",
+  },
+  {
+    title: "Titul NO",
+    value: "titul_no",
+  },
+  {
+    title: "Subtitle NO",
+    value: "subtitle_no",
+  },
+  {
+    title: "Scope",
+    value: "scope",
+  },
+  {
+    title: "Drawing Number",
+    value: "drawing_number",
+  },
+  {
+    title: "Rev NO",
+    value: "rev_no",
+  },
+  {
+    title: "Change Number",
+    value: "change_number",
+  },
+  {
+    title: "DWG Status",
+    value: "dwg_status",
+  },
+  {
+    title: "Component Type",
+    value: "component_type",
+  },
+  {
+    title: "Component Tag",
+    value: "component_tag",
+  },
+  {
+    title: "Tag NO",
+    value: "tag_no",
+  },
+  {
+    title: "BOQ Code",
+    value: "boq_code",
+  },
+  {
+    title: "Description EN/RU",
+    value: "description_en_ru",
+  },
+  {
+    title: "QTY",
+    value: "qty",
+  },
+  {
+    title: "Unit",
+    value: "unit",
+  },
+  {
+    title: "Weight",
+    value: "weight",
+  },
+  {
+    title: "Formul",
+    value: "formul",
+  },
+  {
+    title: "TQ Number",
+    value: "tq_number",
+  },
+  {
+    title: "Notes",
+    value: "notes",
+  },
+  {
+    title: "Access ID",
+    value: "access_id",
+  },
+  {
+    title: "R-AWP ID",
+    value: "r_awp",
+  },
+  {
+    title: "Record Date",
+    value: "record_date",
+  },
+  {
+    title: "Responsible",
+    value: "responsible",
+  },
+  {
+    title: "IWP Type",
+    value: "iwp_type",
+  },
+  {
+    title: "IWP Adi",
+    value: "iwp_adi",
+  },
+  {
+    title: "Construction Start",
+    value: "construction_start",
+  },
+  {
+    title: "Construction Finish",
+    value: "construction_finish",
+  },
+  {
+    title: "Contract",
+    value: "contract",
+  },
+];

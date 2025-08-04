@@ -1,12 +1,14 @@
 import styled from "@emotion/styled";
 import MainTabs from "../components/ui/MainTabs";
 import { Outlet } from "react-router-dom";
+import UniqTagInfo from "../components/excel_read/UniqTagInfo";
 
 const TableLayout = ({ nav }) => {
   return (
     <WrapperAll>
-      <div>
+      <div className="box_nav_with_uniqtag">
         <MainTabs componentTitle={nav} />
+        <UniqTagInfo />
       </div>
       <Outlet />
     </WrapperAll>
@@ -48,5 +50,8 @@ const WrapperAll = styled("div")`
     flex-direction: column;
     gap: 5px;
     width: 100%;
+  }
+  .box_nav_with_uniqtag {
+    position: relative;
   }
 `;

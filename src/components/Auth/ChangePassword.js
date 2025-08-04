@@ -89,7 +89,7 @@ const WrapperAll = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  background: gainsboro;
+  background: white;
   padding: 35px;
   border-radius: 10px;
   .inputs_box_change {
